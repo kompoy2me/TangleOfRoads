@@ -1,3 +1,63 @@
-body {
-  background-color: lightblue;
+@font-face {
+  font-family: "TwentytwelveSans";
+  src: url("source/fonts/TwentytwelveSansG.otf") format("opentype");
 }
+
+h1, h2, h3 {
+  font-family: "TwentytwelveSans", sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.header img {
+}
+
+.artworks {  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.artwork-card {
+  background-color: bisque;
+}
+
+.map-mobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+
+  .artworks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+
+  .map-desktop {
+    display: none;
+  }
+
+  .map-mobile {
+    display: block;
+  }
+
+  .artworks {
+    grid-template-columns: 1fr;
+  }
+
+  .header img {
+    height: 30px;
+  }
+
+}
+
