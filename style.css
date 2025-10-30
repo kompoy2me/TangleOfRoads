@@ -55,7 +55,6 @@ body {
 
 .main h1 {
   font-size: 64px;
-
   line-height: 64px;
 }
 
@@ -72,7 +71,6 @@ body {
 .map-title h2 {
   font-size: 48px;
   line-height: 48px;
-
   display: flex;
   align-items: center;
   gap: 10px;
@@ -114,7 +112,6 @@ body {
   font-size: 24px;
   font-weight: 400;
   margin: 0;
-
 }
 
 .art-title {
@@ -130,27 +127,89 @@ body {
 
 .art-desc {
   font-size: 14px;
+  text-align: justify;
 }
-
 
 /* modal */
 
 .modal {
-  background-color: beige;
   position: fixed;
-  width: 70vw;
-  height: 70vh;
   inset: 0;
   display: none;
-  align-items: center;
-  justify-content: center;
   z-index: 1000;
 }
 
-.art-image img {
-  width: 300px;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 999;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
+.modal-container {
+  position: relative;
+  z-index: 1001;
+  margin: auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 70vw;
+  max-height: 70vh;
+  overflow-y: auto;
+  font-family: "GraphicLCG", sans-serif;
+}
+
+.art-header {
+  text-align: center;
+}
+.art-header h2 {
+  font-family: "TwentytwelveSans", sans-serif;
+  line-height: 32px;
+  font-size: 32px;
+  margin: 0;
+}
+
+.art-header p {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.art-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.art-image-container {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.art-image-container img {
+  max-width: 100%;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.art-content  p {
+  flex: 1;
+  text-align: justify;
+  margin: 0;
+}
 
 @media (max-width: 1200px) {
 
@@ -209,6 +268,20 @@ body {
 
   .header img {
     height: 30px;
+  }
+
+  .art-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .art-image-container {
+    max-width: 100%;
+  }
+
+  .art-content p {
+    margin-top: 16px;
+    text-align: left;
   }
 
 }
